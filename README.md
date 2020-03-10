@@ -19,7 +19,6 @@
    CloudWatchFullAccess
 
    AmazonDynamoDBFullAccess
-
    
 
    下载记录该用户的 access_key_id 以及 secret_access_key
@@ -58,7 +57,7 @@
 
 ## 注意
 
-因为 S3 等参数可能需要全局唯一的值，如果运行中保存，按照提示更改下就好
+因为 S3 等参数可能需要全局唯一的值，如果运行中保错，按照提示更改下就好
 
 
 
