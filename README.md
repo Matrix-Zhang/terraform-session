@@ -1,6 +1,6 @@
 ## 目标
 
-![image-20200310111412882](C:\Users\11344\AppData\Roaming\Typora\typora-user-images\image-20200310111412882.png)
+![image-20200310111412882](https://github.com/Matrix-Zhang/terraform-session/blob/master/images/target.png)
 
 
 
