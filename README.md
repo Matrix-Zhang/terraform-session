@@ -36,23 +36,23 @@
 
 3. 设置 mysql 密码
 
-   使用 kms 
+   - 使用 kms 
 
-   在amazon kms 中新建一个密钥，然后使用该密钥加密数据库的密码。
+      在amazon kms 中新建一个密钥，然后使用该密钥加密数据库的密码。
 
-   ```
-   $ echo -n 'master-password' > plaintext-password
-   $ aws kms encrypt --key-id ab123456-c012-4567-890a-deadbeef123 --plaintext fileb://plaintext-password --encryption-context foo=bar --output text --query CiphertextBlob
-   AQECAHgaPa0J8WadplGCqqVAr4HNvDaFSQ+NaiwIBhmm6qDSFwAAAGIwYAYJKoZIhvcNAQcGoFMwUQIBADBMBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDI+LoLdvYv8l41OhAAIBEIAfx49FFJCLeYrkfMfAw6XlnxP23MmDBdqP8dPp28OoAQ==
-   ```
+      ```
+      $ echo -n 'master-password' > plaintext-password
+      $ aws kms encrypt --key-id ab123456-c012-4567-890a-deadbeef123 --plaintext fileb://plaintext-password --encryption-context foo=bar --output text --query CiphertextBlob
+      AQECAHgaPa0J8WadplGCqqVAr4HNvDaFSQ+NaiwIBhmm6qDSFwAAAGIwYAYJKoZIhvcNAQcGoFMwUQIBADBMBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDI+LoLdvYv8l41OhAAIBEIAfx49FFJCLeYrkfMfAw6XlnxP23MmDBdqP8dPp28OoAQ==
+      ```
 
-   
+      将上述的base64编码字符串赋值粘贴到 live/stage/data-store/mysql/main.tf 的 22 行
 
-   将上述的base64编码字符串赋值粘贴到 live/stage/data-store/mysql/main.tf 的 22 行
+      
 
-   不使用 KMS
+   - 不使用 KMS
 
-   更改 live/stage/data-store/mysql/varables.tf  中的db_password为你需要的密码值（注意，这里是明文）
+      更改 live/stage/data-store/mysql/varables.tf  中的db_password为你需要的密码值（注意，这里是明文）
 
 
 
